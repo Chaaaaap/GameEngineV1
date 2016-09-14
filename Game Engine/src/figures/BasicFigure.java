@@ -45,9 +45,12 @@ public class BasicFigure
 	
 
 	public BasicFigure express(double a, double b) {
+		
 		Matrix express = new Matrix(a, 0, 0, b);
+		
 		Vector[] temp = new Vector[Coordinates.length];
 		Vector diff = express.multiply(Coordinates[0]).sub(Coordinates[0]);
+		
 		for (int i = 0; i < temp.length; i++) {
 			temp[i] = express.multiply(Coordinates[i]).sub(diff);
 		}
