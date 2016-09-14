@@ -16,6 +16,14 @@ public class Vector {
 	public Vector sub(Vector v) {
 		return new Vector(x - v.getX(), y - v.getY());
 	}
+	
+	public Vector divide(double x) {
+		return new Vector(this.x/x, this.y/x);
+	}
+	
+	public Vector multiply(double x) {
+		return new Vector(this.x*x, this.y*x);
+	}
 
 	public double getX() {
 		return x;
