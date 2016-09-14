@@ -50,6 +50,7 @@ public class Main extends JFrame
 		BasicFigure flippedX = figure.flipAroundXAxis();
 		BasicFigure flippedY = figure.flipAroundYAxis();
 		BasicFigure expressFigure = figure.express(2,2);
+		BasicFigure shearsFigure = figure.Shears(1, 0);
 		
 		protected void paintComponent(Graphics g)
 		{
@@ -67,7 +68,10 @@ public class Main extends JFrame
 			S.drawFigure(g, flippedY);
 
 			g.setColor(Color.CYAN);
-			S.drawFigure(g, expressFigure);			
+			S.drawFigure(g, expressFigure);		
+			
+			g.setColor(Color.MAGENTA);
+			S.drawFigure(g, shearsFigure);
 		}
 	}
 }

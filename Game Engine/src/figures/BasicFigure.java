@@ -44,9 +44,22 @@ public class BasicFigure
 	public BasicFigure flipAroundYAxis()
 	{
 		Matrix flipMatrix = new Matrix(-1, 0, 0, 1);
-//		Matrix flipMatrix = new Matrix(0, 1, 1, 0);
+		// Matrix flipMatrix = new Matrix(0, 1, 1, 0);
 		
 		return Flip(flipMatrix);
+	}
+	
+	public BasicFigure Shears(double a, double b)
+	{
+		Vector[] coordinates = new Vector[Coordinates.length];
+		Matrix shearMatrix = new Matrix(1, a, b, 1);
+		
+		Vector diff = shearMatrix.multiply(Coordinates[0]).sub(Coordinates[0]);
+		
+		for(int i = 0; i < coordinates.length; i++)
+			coordinates[i] = shearMatrix.multiply(Coordinates[i]).sub(diff);
+		
+		return new BasicFigure(coordinates);
 	}
 	
 	private BasicFigure Flip(Matrix flipMatrix)
@@ -68,11 +81,16 @@ public class BasicFigure
 		
 	}
 	
-	public BasicFigure express(double a, double b) {
+	public BasicFigure express(double a, double b)
+	{
 		Matrix express = new Matrix(a, 0, 0, b);
+		
 		Vector[] temp = new Vector[Coordinates.length];
+		
 		Vector diff = express.multiply(Coordinates[0]).sub(Coordinates[0]);
-		for (int i = 0; i < temp.length; i++) {
+		
+		for (int i = 0; i < temp.length; i++)
+		{
 			temp[i] = express.multiply(Coordinates[i]).sub(diff);
 		}
 		
