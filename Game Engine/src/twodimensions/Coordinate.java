@@ -2,6 +2,8 @@ package twodimensions;
 
 import java.awt.Graphics;
 
+import Figures.BasicFigure;
+
 public class Coordinate {
 
 	Vector O;
@@ -33,6 +35,16 @@ public class Coordinate {
 		drawLine(g, new Vector(0, 0), new Vector(0, 1));
 		drawLine(g, new Vector(0, 0), new Vector(1, 0));
 		
+	}
+	
+	public void drawFigure(Graphics g, BasicFigure figure) {
+		Vector[] coordinates = figure.getCoordinates();
+		
+		for(int i = 0; i < coordinates.length - 1; i++) {
+			drawLine(g, coordinates[i], coordinates[i+1]);
+		}
+		
+		drawLine(g, coordinates[coordinates.length - 1], coordinates[0]);
 	}
 
 }
