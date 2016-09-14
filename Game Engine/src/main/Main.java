@@ -6,9 +6,9 @@ import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-import Figures.BasicFigure;
-import twodimensions.Coordinate;
-import twodimensions.Vector;
+import base.Coordinate;
+import base.Vector;
+import figures.BasicFigure;
 
 @SuppressWarnings("serial")
 public class Main extends JFrame

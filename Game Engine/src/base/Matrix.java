@@ -1,4 +1,4 @@
-package twodimensions;
+package base;
 
 public class Matrix {
 	

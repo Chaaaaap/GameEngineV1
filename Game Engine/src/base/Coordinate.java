@@ -1,8 +1,8 @@
-package twodimensions;
+package base;
 
 import java.awt.Graphics;
 
-import Figures.BasicFigure;
+import figures.BasicFigure;
 
 public class Coordinate {
 

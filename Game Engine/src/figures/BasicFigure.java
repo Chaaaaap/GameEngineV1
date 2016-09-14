@@ -1,7 +1,7 @@
-package Figures;
+package figures;
 
-import twodimensions.Matrix;
-import twodimensions.Vector;
+import base.Matrix;
+import base.Vector;
 
 public class BasicFigure
 {
