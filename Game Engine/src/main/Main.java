@@ -38,10 +38,10 @@ public class Main extends JFrame
 		Vector p1 = new Vector(2.5, 0);
 		Vector p2 = new Vector(10, 5);
 		
-	    Vector A=new Vector(2,2);
-	    Vector B=new Vector(4,2);
-	    Vector C=new Vector(4,4);
-	    Vector D=new Vector(2,4);
+		Vector A = new Vector(2, 2);
+		Vector B = new Vector(4, 2);
+		Vector C = new Vector(4, 4);
+		Vector D = new Vector(2, 4);
 		
 		BasicFigure figure = new BasicFigure(A, B, C, D);
 		
@@ -53,13 +53,13 @@ public class Main extends JFrame
 			figure.Rotate(60);
 			g.setColor(Color.blue);
 			S.drawFigure(g, figure);
-//			S.drawLine(g, p1, p2);
-//			
-//			for (double i = 0; i < 2 * Math.PI; i = i + 0.01)
-//			{
-//				Vector p = c.add(new Vector(a * Math.cos(i), b * Math.sin(i)));
-//				S.drawPoint(g, p);
-//			}
+			// S.drawLine(g, p1, p2);
+			//
+			// for (double i = 0; i < 2 * Math.PI; i = i + 0.01)
+			// {
+			// Vector p = c.add(new Vector(a * Math.cos(i), b * Math.sin(i)));
+			// S.drawPoint(g, p);
+			// }
 			
 		}
 	}
