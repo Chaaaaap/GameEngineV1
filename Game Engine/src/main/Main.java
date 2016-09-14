@@ -42,17 +42,27 @@ public class Main extends JFrame
 		Vector B = new Vector(4, 2);
 		Vector C = new Vector(4, 4);
 		Vector D = new Vector(2, 4);
+		Vector E = new Vector(1, 3);
 		
-		BasicFigure figure = new BasicFigure(A, B, C, D);
+		BasicFigure figure = new BasicFigure(A, B, C, D, E);
+		
+		BasicFigure rotated = figure.Rotate(60);
+		BasicFigure flippedX = figure.flipAroundXAxis();
+		BasicFigure flippedY = figure.flipAroundYAxis();
 		
 		protected void paintComponent(Graphics g)
 		{
 			super.paintComponent(g);
 			S.drawAxis(g);
 			S.drawFigure(g, figure);
-			figure.Rotate(60);
 			g.setColor(Color.blue);
-			S.drawFigure(g, figure);
+			S.drawFigure(g, rotated);
+			
+			g.setColor(Color.red);
+			S.drawFigure(g, flippedX);
+			
+			g.setColor(Color.green);
+			S.drawFigure(g, flippedY);
 			// S.drawLine(g, p1, p2);
 			//
 			// for (double i = 0; i < 2 * Math.PI; i = i + 0.01)

@@ -21,14 +21,41 @@ public class BasicFigure
 		Center = Center.divide(Coordinates.length);
 	}
 	
-	public void Rotate(double deegres)
+	public BasicFigure Rotate(double deegres)
 	{
+		Vector[] coordinates = new Vector[Coordinates.length];
 		
 		double radians = Math.toRadians(deegres);
 		Matrix rotation = new Matrix(Math.cos(radians), -Math.sin(radians), Math.sin(radians), Math.cos(radians));
 		
 		for (int i = 0; i < Coordinates.length; i++)
-			Coordinates[i] = rotation.multiply(Coordinates[i].sub(Center)).add(Center);
+			coordinates[i] = rotation.multiply(Coordinates[i].sub(Center)).add(Center);
+		
+		return new BasicFigure(coordinates);
+	}
+	
+	public BasicFigure flipAroundXAxis()
+	{
+		Matrix flipMatrix = new Matrix(1, 0, 0, -1);
+		
+		return Flip(flipMatrix);
+	}
+	
+	public BasicFigure flipAroundYAxis()
+	{
+		Matrix flipMatrix = new Matrix(-1, 0, 0, 1);
+//		Matrix flipMatrix = new Matrix(0, 1, 1, 0);
+		
+		return Flip(flipMatrix);
+	}
+	
+	private BasicFigure Flip(Matrix flipMatrix)
+	{
+		Vector[] coordinates = new Vector[Coordinates.length];
+		for (int i = 0; i < Coordinates.length; i++)
+			coordinates[i] = flipMatrix.multiply(Coordinates[i]);
+		
+		return new BasicFigure(coordinates);
 	}
 	
 	public Vector[] getCoordinates()
