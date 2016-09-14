@@ -48,13 +48,14 @@ public class Main extends JFrame
 	    Vector F=new Vector(1,-1);
 		
 		BasicFigure figure = new BasicFigure(A, B, C, D);
+		BasicFigure triangle = new BasicFigure(A,E,B);
 		
 		BasicFigure rotated = figure.Rotate(60);
 		BasicFigure flippedX = figure.flipAroundXAxis();
 		BasicFigure flippedY = figure.flipAroundYAxis();
 		BasicFigure expressFigure = figure.express(2,2);
-		BasicFigure triangle = new BasicFigure(A,E,B);
 		BasicFigure triangleTranslated = triangle.translate(F);
+		BasicFigure triangleMirror = triangle.flipAroundXAxis();
 		BasicFigure shearsFigure = figure.Shears(1, 0);
 		
 		protected void paintComponent(Graphics g)
@@ -81,6 +82,9 @@ public class Main extends JFrame
 
 			g.setColor(Color.pink);
 			T.drawFigure(g, triangleTranslated);
+			
+			g.setColor(Color.CYAN);
+			T.drawFigure(g, triangleMirror);
 		
 
 			g.setColor(Color.CYAN);
