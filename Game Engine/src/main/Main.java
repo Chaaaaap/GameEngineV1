@@ -6,9 +6,9 @@ import java.awt.Graphics;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import figures.BasicFigure;
 import base.Coordinate;
 import base.Vector;
-import figures.BasicFigure;
 
 @SuppressWarnings("serial")
 public class Main extends JFrame
@@ -44,33 +44,30 @@ public class Main extends JFrame
 		Vector D = new Vector(2, 4);
 		Vector E = new Vector(1, 3);
 		
-		BasicFigure figure = new BasicFigure(A, B, C, D, E);
+		BasicFigure figure = new BasicFigure(A, B, C, D);
 		
 		BasicFigure rotated = figure.Rotate(60);
 		BasicFigure flippedX = figure.flipAroundXAxis();
 		BasicFigure flippedY = figure.flipAroundYAxis();
+		BasicFigure expressFigure = figure.express(2,2);
 		
 		protected void paintComponent(Graphics g)
 		{
 			super.paintComponent(g);
 			S.drawAxis(g);
 			S.drawFigure(g, figure);
-			g.setColor(Color.blue);
+			
+			g.setColor(Color.BLUE);
 			S.drawFigure(g, rotated);
 			
-			g.setColor(Color.red);
+			g.setColor(Color.RED);
 			S.drawFigure(g, flippedX);
 			
-			g.setColor(Color.green);
+			g.setColor(Color.GREEN);
 			S.drawFigure(g, flippedY);
-			// S.drawLine(g, p1, p2);
-			//
-			// for (double i = 0; i < 2 * Math.PI; i = i + 0.01)
-			// {
-			// Vector p = c.add(new Vector(a * Math.cos(i), b * Math.sin(i)));
-			// S.drawPoint(g, p);
-			// }
-			
+
+			g.setColor(Color.CYAN);
+			S.drawFigure(g, expressFigure);			
 		}
 	}
 }
