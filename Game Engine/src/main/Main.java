@@ -32,6 +32,8 @@ public class Main extends JFrame
 	class DrawPanel extends JPanel
 	{
 		Coordinate S = new Coordinate(50, 50, 200, 400);
+		Coordinate T = new Coordinate(100,100,400,500);
+
 		Vector c = new Vector(4, 3);
 		double a = 3;
 		double b = 2;
@@ -42,20 +44,28 @@ public class Main extends JFrame
 	    Vector B=new Vector(4,2);
 	    Vector C=new Vector(4,4);
 	    Vector D=new Vector(2,4);
+	    Vector E=new Vector(3,4);
+	    Vector F=new Vector(1,-1);
 		
 		BasicFigure figure = new BasicFigure(A, B, C, D);
 		BasicFigure expressFigure = figure.express(2,2);
+		BasicFigure triangle = new BasicFigure(A,E,B);
+		BasicFigure triangleTranslated = triangle.translate(F);
 		
 		protected void paintComponent(Graphics g)
 		{
 			super.paintComponent(g);
 			S.drawAxis(g);
+			T.drawFigure(g, triangle);
 //			S.drawFigure(g,x figure);
 			figure.Rotate(60);
 			g.setColor(Color.blue);
 			S.drawFigure(g, figure);
 			g.setColor(Color.RED);
 			S.drawFigure(g, expressFigure);
+			g.setColor(Color.pink);
+			T.drawFigure(g, triangleTranslated);
+		
 			
 //			S.drawLine(g, p1, p2);
 //			
