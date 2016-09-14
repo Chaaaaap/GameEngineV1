@@ -38,8 +38,14 @@ public class Coordinate
 	
 	public void drawAxis(Graphics g)
 	{
-		drawLine(g, new Vector(0, 0), new Vector(0, 1));
-		drawLine(g, new Vector(0, 0), new Vector(1, 0));
+		drawLine(g, new Vector(0, 0), new Vector(0, 5));
+		drawLine(g, new Vector(0, 0), new Vector(5, 0));
+		
+		drawLine(g, new Vector(0, 5), new Vector(0.1,4.8));
+		drawLine(g, new Vector(0, 5), new Vector(-0.1,4.8));
+		
+		drawLine(g, new Vector(5, 0), new Vector(4.8,0.1));
+		drawLine(g, new Vector(5, 0), new Vector(4.8,-0.1));
 		
 	}
 	
