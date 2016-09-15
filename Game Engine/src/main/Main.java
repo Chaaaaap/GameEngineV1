@@ -22,7 +22,7 @@ public class Main extends JFrame
 	public static void main(String[] args)
 	{
 		Main frame = new Main();
-		frame.setTitle("TestPanelDrawing");
+		frame.setTitle("GamePhysics");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setSize(1000, 700);
 		frame.setLocationRelativeTo(null); // Center the frame
@@ -32,7 +32,7 @@ public class Main extends JFrame
 	class DrawPanel extends JPanel
 	{
 		Coordinate S = new Coordinate(50, 50, 200, 400);
-		Coordinate T = new Coordinate(100,100,400,500);
+		Coordinate T = new Coordinate(50,50,500,400);
 
 		Vector c = new Vector(4, 3);
 		double a = 3;
@@ -50,7 +50,7 @@ public class Main extends JFrame
 		BasicFigure figure = new BasicFigure(A, B, C, D);
 		BasicFigure triangle = new BasicFigure(A,E,B);
 		
-		BasicFigure rotated = figure.Rotate(60);
+		BasicFigure rotated = figure.Rotate(45);
 		BasicFigure flippedX = figure.flipAroundXAxis();
 		BasicFigure flippedY = figure.flipAroundYAxis();
 		BasicFigure expressFigure = figure.express(2,2);
@@ -83,9 +83,8 @@ public class Main extends JFrame
 			g.setColor(Color.pink);
 			T.drawFigure(g, triangleTranslated);
 			
-			g.setColor(Color.CYAN);
+			g.setColor(Color.ORANGE);
 			T.drawFigure(g, triangleMirror);
-		
 
 			g.setColor(Color.CYAN);
 			S.drawFigure(g, expressFigure);		
