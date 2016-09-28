@@ -31,6 +31,16 @@ public class Vector
 		return new Vector(this.x * x, this.y * x);
 	}
 	
+	public double length()
+	{
+		return Math.sqrt(x*x+y*y);
+	}
+	
+	public Vector unit()
+	{
+		return new Vector(x, y).divide(length());
+	}
+	
 	public double getX()
 	{
 		return x;
