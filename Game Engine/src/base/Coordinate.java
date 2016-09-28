@@ -34,7 +34,7 @@ public class Coordinate
 	public void drawPoint(Graphics g, Vector v, int size)
 	{
 		Vector vp = transform(v);
-		g.fillOval((int) vp.getX(), (int) vp.getY(), size, size);
+		g.fillOval((int) vp.getX()-size/2, (int) vp.getY()-size/2, size, size);
 	}
 	
 	public void drawPoint(Graphics g, Vector v, Color c, int size)
