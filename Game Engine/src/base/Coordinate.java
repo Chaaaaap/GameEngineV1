@@ -1,5 +1,6 @@
 package base;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 import figures.BasicFigure;
@@ -29,6 +30,13 @@ public class Coordinate
 		g.fillOval((int) vp.getX(), (int) vp.getY(), 2, 2);
 	}
 	
+	public void drawPoint(Graphics g, Vector v, Color c, int size)
+	{
+		Color oldColor = g.getColor();
+		g.setColor(c);
+		drawPoint(g, v);
+		g.setColor(oldColor);
+	}
 	public void drawLine(Graphics g, Vector v1, Vector v2)
 	{
 		v1 = transform(v1);
