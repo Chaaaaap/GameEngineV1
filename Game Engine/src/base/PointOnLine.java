@@ -32,10 +32,12 @@ public class PointOnLine extends JFrame {
 
 		int radius = 400;
 		Vector A = new Vector(4, 2); 								// Point on the line
+		Vector AB = new Vector(6, 2);
+		
 		Vector B = new Vector(16, 5); 							// Point on the line
 		Vector r = B.sub(A).unit(); 						// Unit length vector in direction of the line
 		Vector P; 															// Blue point moving along the line
-		Vector moon = A;
+		Vector moon = A.sub(AB);
 		double s = 2; 											// speed - units pr. sec
 
 		PaintPanel() {
@@ -63,7 +65,7 @@ public class PointOnLine extends JFrame {
 			S2.drawPoint(g, P, Color.BLUE, 10);
 			
 			S2.drawCircle(g, new Ellipse(radius), A);
-			S2.drawPoint(g, moon, Color.RED, 10);
+			S2.drawPoint(g, moon.add(A), Color.RED, 10);
 
 			// Stop simulation
 			// if (P.x>=B.x) myTimer.stop();
