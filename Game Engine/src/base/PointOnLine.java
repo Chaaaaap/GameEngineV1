@@ -9,6 +9,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+import figures.Ellipse;
+
 public class PointOnLine extends JFrame {
 	PaintPanel panel = new PaintPanel();
 
@@ -55,6 +57,8 @@ public class PointOnLine extends JFrame {
 			S2.drawPoint(g, A);
 			S2.drawPoint(g, B);
 			S2.drawPoint(g, P, Color.BLUE, 10);
+			
+			S2.drawCircle(g, new Ellipse(400), A);
 
 			// Stop simulation
 			// if (P.x>=B.x) myTimer.stop();
