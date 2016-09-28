@@ -30,6 +30,7 @@ public class PointOnLine extends JFrame {
 		int frameDelay = 1000 / frameRate; 	// time between frames in milli sec
 		Timer myTimer = new Timer(frameDelay, new TimerListener());
 
+		int radius = 400;
 		Vector A = new Vector(4, 2); 								// Point on the line
 		Vector B = new Vector(16, 5); 							// Point on the line
 		Vector r = B.sub(A).unit(); 						// Unit length vector in direction of the line
@@ -51,8 +52,8 @@ public class PointOnLine extends JFrame {
 
 			// Simulation
 			P = A.add(r.multiply(s * t));
-			moon = new Matrix(Math.cos(1), -Math.sin(1), Math.sin(1), Math.cos(1)).multiply(moon);
-			
+			moon = new Matrix(Math.cos(Math.toRadians(1)), -Math.sin(Math.toRadians(1)), Math.sin(Math.toRadians(1)), Math.cos(Math.toRadians(1))).multiply(moon);
+//			moon = moon.add(r.multiply(s * t));
 
 			// Display
 			S2.drawAxis(g);
@@ -61,7 +62,7 @@ public class PointOnLine extends JFrame {
 			S2.drawPoint(g, B);
 			S2.drawPoint(g, P, Color.BLUE, 10);
 			
-			S2.drawCircle(g, new Ellipse(400), A);
+			S2.drawCircle(g, new Ellipse(radius), A);
 			S2.drawPoint(g, moon, Color.RED, 10);
 
 			// Stop simulation
