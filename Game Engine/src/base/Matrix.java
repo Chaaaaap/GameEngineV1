@@ -14,9 +14,9 @@ public class Matrix
 		this.d = d;
 	}
 	
-	public Vector multiply(Vector v)
+	public Vector2D multiply(Vector2D v)
 	{
-		return new Vector(a * v.getX() + b * v.getY(), c * v.getX() + d * v.getY());
+		return new Vector2D(a * v.getX() + b * v.getY(), c * v.getX() + d * v.getY());
 	}
 	
 	public Matrix multiply(Matrix m)

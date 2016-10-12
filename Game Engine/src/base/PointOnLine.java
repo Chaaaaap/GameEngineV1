@@ -31,13 +31,13 @@ public class PointOnLine extends JFrame {
 		Timer myTimer = new Timer(frameDelay, new TimerListener());
 
 		int radius = 400;
-		Vector A = new Vector(4, 2); 								// Point on the line
-		Vector AB = new Vector(6, 2);
+		Vector2D A = new Vector2D(4, 2); 								// Point on the line
+		Vector2D AB = new Vector2D(6, 2);
 		
-		Vector B = new Vector(16, 5); 							// Point on the line
-		Vector r = B.sub(A).unit(); 						// Unit length vector in direction of the line
-		Vector P; 															// Blue point moving along the line
-		Vector moon = A.sub(AB);
+		Vector2D B = new Vector2D(16, 5); 							// Point on the line
+		Vector2D r = B.sub(A).unit(); 						// Unit length vector in direction of the line
+		Vector2D P; 															// Blue point moving along the line
+		Vector2D moon = A.sub(AB);
 		double s = 2; 											// speed - units pr. sec
 
 		PaintPanel() {

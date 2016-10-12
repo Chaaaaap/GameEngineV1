@@ -1,15 +1,15 @@
 package figures;
 
 import base.Matrix;
-import base.Vector;
+import base.Vector2D;
 
 public class BasicFigure
 {
 	
-	private Vector[] Coordinates;
-	private Vector Center;
+	private Vector2D[] Coordinates;
+	private Vector2D Center;
 	
-	public BasicFigure(Vector... coordinates){
+	public BasicFigure(Vector2D... coordinates){
 		Coordinates = coordinates;
 		
 		Center = Coordinates[0];
@@ -22,7 +22,7 @@ public class BasicFigure
 	
 	public BasicFigure Rotate(double deegres)
 	{
-		Vector[] coordinates = new Vector[Coordinates.length];
+		Vector2D[] coordinates = new Vector2D[Coordinates.length];
 		
 		double radians = Math.toRadians(deegres);
 		Matrix rotation = new Matrix(Math.cos(radians), -Math.sin(radians), Math.sin(radians), Math.cos(radians));
@@ -50,10 +50,10 @@ public class BasicFigure
 	
 	public BasicFigure Shears(double a, double b)
 	{
-		Vector[] coordinates = new Vector[Coordinates.length];
+		Vector2D[] coordinates = new Vector2D[Coordinates.length];
 		Matrix shearMatrix = new Matrix(1, a, b, 1);
 		
-		Vector diff = shearMatrix.multiply(Coordinates[0]).sub(Coordinates[0]);
+		Vector2D diff = shearMatrix.multiply(Coordinates[0]).sub(Coordinates[0]);
 		
 		for(int i = 0; i < coordinates.length; i++)
 			coordinates[i] = shearMatrix.multiply(Coordinates[i]).sub(diff);
@@ -63,20 +63,20 @@ public class BasicFigure
 	
 	private BasicFigure Flip(Matrix flipMatrix)
 	{
-		Vector[] coordinates = new Vector[Coordinates.length];
+		Vector2D[] coordinates = new Vector2D[Coordinates.length];
 		for (int i = 0; i < Coordinates.length; i++)
 			coordinates[i] = flipMatrix.multiply(Coordinates[i]);
 		
 		return new BasicFigure(coordinates);
 	}
 	
-	public Vector[] getCoordinates() {
+	public Vector2D[] getCoordinates() {
 		return Coordinates;
 	}
 	
-	public BasicFigure translate(Vector v) {
+	public BasicFigure translate(Vector2D v) {
 		
-		Vector[] temp = new Vector[Coordinates.length];
+		Vector2D[] temp = new Vector2D[Coordinates.length];
 		
 		for(int i = 0; i < temp.length; i++) {
 			temp[i] = Coordinates[i].add(v);
@@ -86,9 +86,9 @@ public class BasicFigure
 
 	public BasicFigure express(double a, double b) {
 		Matrix express = new Matrix(a, 0, 0, b);
-		Vector[] temp = new Vector[Coordinates.length];
+		Vector2D[] temp = new Vector2D[Coordinates.length];
 		
-		Vector diff = express.multiply(Coordinates[0]).sub(Coordinates[0]);
+		Vector2D diff = express.multiply(Coordinates[0]).sub(Coordinates[0]);
 		
 		for (int i = 0; i < temp.length; i++) {
 			temp[i] = express.multiply(Coordinates[i]).sub(diff);

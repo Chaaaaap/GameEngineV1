@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 
 import figures.BasicFigure;
 import base.Coordinate;
-import base.Vector;
+import base.Vector2D;
 
 @SuppressWarnings("serial")
 public class Main extends JFrame
@@ -34,18 +34,18 @@ public class Main extends JFrame
 		Coordinate S = new Coordinate(50, 50, 200, 400);
 		Coordinate T = new Coordinate(50,50,500,400);
 
-		Vector c = new Vector(4, 3);
+		Vector2D c = new Vector2D(4, 3);
 		double a = 3;
 		double b = 2;
-		Vector p1 = new Vector(2.5, 0);
-		Vector p2 = new Vector(10, 5);
+		Vector2D p1 = new Vector2D(2.5, 0);
+		Vector2D p2 = new Vector2D(10, 5);
 		
-	    Vector A=new Vector(2,2);
-	    Vector B=new Vector(4,2);
-	    Vector C=new Vector(4,4);
-	    Vector D=new Vector(2,4);
-	    Vector E=new Vector(3,4);
-	    Vector F=new Vector(1,-1);
+	    Vector2D A=new Vector2D(2,2);
+	    Vector2D B=new Vector2D(4,2);
+	    Vector2D C=new Vector2D(4,4);
+	    Vector2D D=new Vector2D(2,4);
+	    Vector2D E=new Vector2D(3,4);
+	    Vector2D F=new Vector2D(1,-1);
 		
 		BasicFigure figure = new BasicFigure(A, B, C, D);
 		BasicFigure triangle = new BasicFigure(A,E,B);
