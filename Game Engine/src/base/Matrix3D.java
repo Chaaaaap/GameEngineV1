@@ -24,7 +24,9 @@ public class Matrix3D {
 	}
 	
 	public Matrix3D multiply(Matrix3D m) {
-		return null;
+		return new Matrix3D(a*m.getA()+b*m.getD()+c*m.getG(), a*m.getB()+b*m.getE()+c*m.getH(), a*m.getC()+b*m.getF()+c*m.getI(),
+							d*m.getA()+e*m.getD()+f*m.getG(), d*m.getB()+e*m.getE()+f*m.getH(), d*m.getC()+e*m.getF()+c*m.getI(),
+							g*m.getA()+h*m.getD()+i*m.getG(), g*m.getB()+h*m.getE()+i*m.getH(), g*m.getC()+h*m.getF()+i*m.getI());
 	}
 
 	public double getA() {
