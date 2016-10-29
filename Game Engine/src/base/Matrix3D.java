@@ -67,4 +67,8 @@ public class Matrix3D {
 		return i;
 	}
 	
+	public String toString() {
+		return "|"+a+" "+b+" "+c+"|\n|"+d+" "+e+" "+f+"|\n|"+g+" "+h+" "+i+"|";
+	}
+	
 }
