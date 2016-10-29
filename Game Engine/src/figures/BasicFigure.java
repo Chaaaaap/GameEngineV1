@@ -1,6 +1,6 @@
 package figures;
 
-import base.Matrix;
+import base.Matrix2D;
 import base.Vector2D;
 
 public class BasicFigure
@@ -25,7 +25,7 @@ public class BasicFigure
 		Vector2D[] coordinates = new Vector2D[Coordinates.length];
 		
 		double radians = Math.toRadians(deegres);
-		Matrix rotation = new Matrix(Math.cos(radians), -Math.sin(radians), Math.sin(radians), Math.cos(radians));
+		Matrix2D rotation = new Matrix2D(Math.cos(radians), -Math.sin(radians), Math.sin(radians), Math.cos(radians));
 		
 		for (int i = 0; i < Coordinates.length; i++)
 			coordinates[i] = rotation.multiply(Coordinates[i].sub(Center)).add(Center);
@@ -35,14 +35,14 @@ public class BasicFigure
 	
 	public BasicFigure flipAroundXAxis()
 	{
-		Matrix flipMatrix = new Matrix(1, 0, 0, -1);
+		Matrix2D flipMatrix = new Matrix2D(1, 0, 0, -1);
 		
 		return Flip(flipMatrix);
 	}
 	
 	public BasicFigure flipAroundYAxis()
 	{
-		Matrix flipMatrix = new Matrix(-1, 0, 0, 1);
+		Matrix2D flipMatrix = new Matrix2D(-1, 0, 0, 1);
 		// Matrix flipMatrix = new Matrix(0, 1, 1, 0);
 		
 		return Flip(flipMatrix);
@@ -51,7 +51,7 @@ public class BasicFigure
 	public BasicFigure Shears(double a, double b)
 	{
 		Vector2D[] coordinates = new Vector2D[Coordinates.length];
-		Matrix shearMatrix = new Matrix(1, a, b, 1);
+		Matrix2D shearMatrix = new Matrix2D(1, a, b, 1);
 		
 		Vector2D diff = shearMatrix.multiply(Coordinates[0]).sub(Coordinates[0]);
 		
@@ -61,7 +61,7 @@ public class BasicFigure
 		return new BasicFigure(coordinates);
 	}
 	
-	private BasicFigure Flip(Matrix flipMatrix)
+	private BasicFigure Flip(Matrix2D flipMatrix)
 	{
 		Vector2D[] coordinates = new Vector2D[Coordinates.length];
 		for (int i = 0; i < Coordinates.length; i++)
@@ -85,7 +85,7 @@ public class BasicFigure
 	}
 
 	public BasicFigure express(double a, double b) {
-		Matrix express = new Matrix(a, 0, 0, b);
+		Matrix2D express = new Matrix2D(a, 0, 0, b);
 		Vector2D[] temp = new Vector2D[Coordinates.length];
 		
 		Vector2D diff = express.multiply(Coordinates[0]).sub(Coordinates[0]);

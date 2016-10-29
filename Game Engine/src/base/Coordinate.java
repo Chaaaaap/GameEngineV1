@@ -11,13 +11,13 @@ public class Coordinate
 {
 	
 	Vector2D O;
-	Matrix S, F, T;
+	Matrix2D S, F, T;
 	
 	public Coordinate(double sx, double sy, double ox, double oy)
 	{
 		O = new Vector2D(ox, oy);
-		S = new Matrix(sx, 0, 0, sy);
-		F = new Matrix(1, 0, 0, -1);
+		S = new Matrix2D(sx, 0, 0, sy);
+		F = new Matrix2D(1, 0, 0, -1);
 		T = S.multiply(F);
 	}
 	

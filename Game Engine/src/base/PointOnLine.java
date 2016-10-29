@@ -54,7 +54,7 @@ public class PointOnLine extends JFrame {
 
 			// Simulation
 			P = A.add(r.multiply(s * t));
-			moon = new Matrix(Math.cos(Math.toRadians(1)), -Math.sin(Math.toRadians(1)), Math.sin(Math.toRadians(1)), Math.cos(Math.toRadians(1))).multiply(moon);
+			moon = new Matrix2D(Math.cos(Math.toRadians(1)), -Math.sin(Math.toRadians(1)), Math.sin(Math.toRadians(1)), Math.cos(Math.toRadians(1))).multiply(moon);
 //			moon = moon.add(r.multiply(s * t));
 
 			// Display
