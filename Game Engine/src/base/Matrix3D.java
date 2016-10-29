@@ -20,7 +20,9 @@ public class Matrix3D {
 	}
 	
 	public Vector3D multiply(Vector3D v) {
-		return null;
+		return new Vector3D(a*v.getX()+b*v.getY()+c*v.getZ(),
+							d*v.getX()+e*v.getY()+f*v.getZ(),
+							g*v.getX()+h*v.getY()+i*v.getZ());
 	}
 	
 	public Matrix3D multiply(Matrix3D m) {

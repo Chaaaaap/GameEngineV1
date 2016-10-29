@@ -44,6 +44,19 @@ public class Vector3D {
 		return "("+x+","+y+","+z+")";
 	}
 
+	public double getX() {
+		return x;
+	}
+
+	public double getY() {
+		return y;
+	}
+
+	public double getZ() {
+		return z;
+	}
+
+	
 //	public static void main(String[] args) {
 //		System.out.println("Test V2 - 3D vector");
 //		Vector3D a = new Vector3D(1, 1, 2);
