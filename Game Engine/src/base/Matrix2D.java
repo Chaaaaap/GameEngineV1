@@ -46,4 +46,8 @@ public class Matrix2D
 		return d;
 	}
 	
+	public String toString() {
+		return a + ", " + b + "\n"+ c + ", " + d;
+	}
+	
 }
