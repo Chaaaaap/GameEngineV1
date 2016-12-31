@@ -11,6 +11,7 @@ import javax.swing.Timer;
 
 import figures.Ellipse;
 
+@SuppressWarnings("serial")
 public class PointOnLine extends JFrame {
 	PaintPanel panel = new PaintPanel();
 

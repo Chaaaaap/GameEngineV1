@@ -2,7 +2,6 @@ package base;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.geom.Ellipse2D;
 
 import figures.BasicFigure;
 import figures.Ellipse;
@@ -55,7 +54,7 @@ public class Coordinate
 	public void drawCircle(Graphics g, Ellipse e, Vector2D center)
 	{
 		center = transform(center);
-		Vector2D centerVector = transform(new Vector2D(e.getRadius(), e.getRadius()));
+//		Vector2D centerVector = transform(new Vector2D(e.getRadius(), e.getRadius()));
 		
 //		center = new Vector(center.getX() + centerVector.getX(), center.getY() - centerVector.getY());
 //		center = center.sub(transform(new Vector(e.getRadius(), e.getRadius())));
